@@ -14,3 +14,4 @@ puts 100 >= 100 # true
 puts 100 <= 101 # true
 puts 10.eql?(10.0) # false (.eql? compares types)
 
+ 
