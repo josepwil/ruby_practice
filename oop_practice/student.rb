@@ -1,6 +1,9 @@
 # when writing a class use an instance variable (@variable)
+require_relative 'crud'
 
 class Student
+  # include/mixin the functionality of the Crud module
+  include Crud
   # gives you getters/setters
   attr_accessor :first_name, :last_name, :email, :username, :password
 
@@ -39,12 +42,15 @@ end
 mashrur = Student.new("Mashrur", "Hossain", "mashrur1", "mashrur@example.com", "password1")
 brian = Student.new("Brian", "James", "brian1", "brian@example.com", "password2")
 
-puts mashrur
-puts brian
+hashed_password = mashrur.create_hash_digest(mashrur.password)
+puts hashed_password
 
-mashrur.last_name = brian.last_name
-puts "Mashrur is altered"
-puts mashrur
+# puts mashrur
+# puts brian
+
+# mashrur.last_name = brian.last_name
+# puts "Mashrur is altered"
+# puts mashrur
 # mashrur.first_name = "Mashrur"
 # mashrur.last_name = "Hossain"
 # mashrur.email = "example@gmail.com"
