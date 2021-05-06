@@ -35,4 +35,4 @@ loop do
   city = gets.chomp
   areacode = get_area_code(dial_book, city)
   puts "The area code for #{city} is #{areacode}"
-end
+end 
